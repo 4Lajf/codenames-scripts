@@ -5,6 +5,8 @@
 // @description  Adds AniList search buttons to Codenames tiles.
 // @author       You
 // @match        https://codenames.game/*
+// @downloadURL  https://raw.githubusercontent.com/4Lajf/codenames-scripts/main/codenamesAniListSearch.user.js
+// @updateURL    https://raw.githubusercontent.com/4Lajf/codenames-scripts/main/codenamesAniListSearch.user.js
 // @grant        none
 // ==/UserScript==
 
@@ -13,7 +15,7 @@
 
     const attachSearchButtons = () => {
         // Find all tiles
-        const tiles = document.querySelectorAll('.jsx-3384330024.card.shadow-card.text-black');
+        const tiles = document.querySelectorAll('.card.shadow-card.text-black');
 
         tiles.forEach(tile => {
             // Avoid duplicates
