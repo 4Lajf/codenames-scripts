@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name         Codenames AniList Search
 // @namespace    http://tampermonkey.net/
-// @version      1.0.2
+// @version      1.0.3
 // @description  Adds AniList search buttons to Codenames tiles.
 // @author       You
 // @match        https://codenames.game/*
@@ -15,7 +15,7 @@
 
     const attachSearchButtons = () => {
         // Find all tiles
-        const tiles = document.querySelectorAll('.cardImage');
+        const tiles = document.querySelectorAll('.card.shadow-card.text-black');
 
         tiles.forEach(tile => {
             // Avoid duplicates
@@ -34,17 +34,17 @@
             });
             searchBtn.onclick = () => {
                 // Extract the text from the tile
-                const tileText = tile.textContent.trim().replace("🔍", "").replaceAll(" ","+");
-                // Open a new AniList search tab
+                const tileText = tile.textContent.trim().replace("🔍", "")
                 const searchQuery = encodeURIComponent(tileText);
+                // Open a new search tab
                 // AniList
-                //window.open(`https://anilist.co/search/anime?sort=SEARCH_MATCH&search=${searchQuery}`, '_blank');
+                window.open(`https://anilist.co/search/anime?sort=SEARCH_MATCH&search=${searchQuery}`, '_blank');
                 // AniDB
-                //window.open(`https://anidb.net/anime/?adb.search=${searchQuery}&do.search=1`, '_blank');
+                // window.open(`https://anidb.net/anime/?adb.search=${searchQuery}&do.search=1`, '_blank');
                 // Anime News Network
                 // window.open(`https://www.animenewsnetwork.com/search?q=${searchQuery}`, '_blank');
                 // Kitsu
-                window.open(`https://kitsu.io/anime?text=${searchQuery}`, '_blank');
+                // window.open(`https://kitsu.io/anime?text=${searchQuery}`, '_blank');
                 // MyAnimeList
                 // window.open(`https://myanimelist.net/anime.php?q=${searchQuery}`, '_blank');
             };
