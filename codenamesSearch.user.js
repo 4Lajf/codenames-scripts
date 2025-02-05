@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name         Codenames AniList Search
 // @namespace    http://tampermonkey.net/
-// @version      1.0.5
+// @version      1.0.6
 // @description  Adds AniList search buttons to Codenames tiles.
 // @author       You
 // @match        https://codenames.game/*
