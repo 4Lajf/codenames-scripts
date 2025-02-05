@@ -15,7 +15,7 @@
 
     const attachSearchButtons = () => {
         // Find all tiles
-        const tiles = document.querySelectorAll('.card.shadow-card');
+        const tiles = document.querySelectorAll('.card.shadow-bellow-card:not(.cover)');
 
         tiles.forEach(tile => {
             // Avoid duplicates
